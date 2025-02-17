@@ -15,6 +15,8 @@ install_jre() {
 
   wget --quiet $JRE_URL -O - |tar -xzf -
 
+  ls -la sapmachine-jre-21.0.5
+
   export JAVA_HOME=$(pwd)/sapmachine-jre-${JRE_VERSION}
   $JAVA_HOME/bin/java -version
 
