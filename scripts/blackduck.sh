@@ -13,8 +13,7 @@ DETECT_URL="https://detect.synopsys.com/detect10.sh"
 install_jre() {
   echo "Downloading and installing sapmachine from $JRE_URL"
 
-  wget --quiet $JRE_URL
-  tar -xzf $JRE_TAR
+  wget --quiet $JRE_URL -O - |tar -xzf -
 
   export JAVA_HOME=$(pwd)/sapmachine-jre-${JRE_VERSION}
   $JAVA_HOME/bin/java -version
